@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/custum.css"}}" />
+    
+   
+
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+
+    <footer class="site-footer clearfix">
+         <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+     {{! The main JavaScript file for Yog }}
+
+     <script type="text/javascript" src="{{asset "js/jquery-1.11.0.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.imagesloaded.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.wookmark.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script>
+
+    <script type="text/javascript">
+       (function ($){
+      $('#tiles').imagesLoaded(function() {
+        // Prepare layout options.
+        var options = {
+          itemWidth: 250, // Optional min width of a grid item
+          autoResize: true, // This will auto-update the layout when the browser window is resized.
+          container: $('#tiles'), // Optional, used for some extra CSS styling
+          offset: 5, // Optional, the distance between grid items
+          outerOffset: 12, // Optional the distance from grid to parent
+          flexibleWidth: '50%', // Optional, the maximum width of a grid item
+          
+        };
+
+        // Get a reference to your grid items.
+        var handler = $('#tiles li');
+
+        var $window = $(window);
+        $window.resize(function() {
+          var windowWidth = $window.width(),
+              newOptions = { flexibleWidth: '50%' };
+
+          // Breakpoint
+          if (windowWidth < 1024) {
+            newOptions.flexibleWidth = '100%';
+          }
+
+          handler.wookmark(newOptions);
+        });
+
+        // Call the layout function.
+        handler.wookmark(options);
+      });
+    })(jQuery);
+       
+        
+    </script>
+</body>
+</html>

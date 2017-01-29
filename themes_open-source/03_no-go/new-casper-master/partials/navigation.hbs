@@ -1,0 +1,34 @@
+<div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+
+    <ul>
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+    </ul>
+
+    <form id="nav-search-form" action="{{@blog.url}}/search" method="get" >
+      <input id="nav-search" placeholder="Search" />
+    </form>
+
+    <section class="share">
+        <h4>Find me</h4>
+        <section class="social-media">
+            <a class="icon-twitter" href="https://twitter.com/patsobo_19">
+                <span class="hidden">Twitter</span>
+            </a>
+            <a class="icon-facebook" href="https://www.facebook.com/patrick.sobolewski.9">
+                <span class="hidden">Facebook</span>
+            </a>
+            <a class="icon-google-plus" href="https://plus.google.com/u/0/114098112945999852434/posts">
+                <span class="hidden">Google+</span>
+            </a>
+        </section>
+    </section>
+
+    <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
+</div>
+<span class="nav-cover"></span>

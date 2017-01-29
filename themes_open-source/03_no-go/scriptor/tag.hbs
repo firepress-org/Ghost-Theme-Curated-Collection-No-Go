@@ -1,0 +1,37 @@
+{{!< default}}
+
+{{> header}}
+
+
+<main class="main-content theme-margin" role="main">
+
+        <header class="archive-header">
+            <h1><span>All posts in:</span> {{tag.name}}</h1>
+        </header>
+
+    {{#foreach posts}}
+    
+        <article class="theme-margin" role="article">
+            <header>
+                <div class="post-meta">
+                    {{#if featured}}
+                        <span class="featured-post"><i class="icon-star"></i> Featured &mdash;</span>
+                    {{/if}}
+                    <time class="date" datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>
+                </div>
+                <h1 class="post-title"><a href="{{{url}}}" rel="bookmark">{{title}}</a></h1>
+            </header>
+            <div class="post-content">
+                {{content words="0"}}
+                <p>{{excerpt}}&hellip;</p>
+                <a class="read-more" href="{{url}}" title="{{title}}">Continue reading &rarr;</a>
+            </div><!-- end post-content -->
+        </article>
+
+    {{/foreach}}
+
+    {{> pagination}}
+
+</main><!-- end main-content -->
+    
+{{> footer}}

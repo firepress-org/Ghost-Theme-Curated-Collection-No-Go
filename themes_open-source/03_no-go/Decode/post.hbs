@@ -1,0 +1,72 @@
+{{!< default}}
+<div class="site-main">
+
+<header class="site-header">
+	{{#if @blog.logo}}<a href="{{@blog.url}}"><img class="blog-logo" src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+	{{#if @blog.title}}<h1 class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>{{/if}}
+	{{#if @blog.description}}<h2 class="blog-description">{{@blog.description}}</h2>{{/if}}
+
+	{{navigation}}
+</header>
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+<main class="site-content" role="main">
+
+	<article class="{{post_class}}">
+
+			{{! Add Open Graph tags to head}}
+			{{#contentFor "meta"}}
+				<meta property="og:description" content="{{excerpt characters="220"}}...">
+			{{/contentFor}}
+
+			{{! Everything below outputs content of the the post which has been published }}
+
+			<header class="post-header">
+				{{#if image}}<a href="{{url}}"><img class="post-image" src="{{image}}"></a>{{/if}}
+				<h1 class="post-title">{{title}}</h1>
+				<span class="post-meta">Posted on <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMMM YYYY'}}</time></span>
+			</header>
+
+			<section class="post-content">
+				{{content}}
+			</section>
+
+			<footer class="post-footer">
+				{{#author}}
+					<section class="author-card cf">
+						{{#if image}}
+							<figure class="author-image">
+								<a href="{{url}}"><img src="{{image}}" alt="{{name}}'s Image"></a>
+							</figure>
+						{{/if}}
+						<div class="author-meta" {{#if author.image}}style="width: 65%; float: left;"{{/if}}>
+							 {{#if name}}<a class="author-name" href="{{url}}">{{name}}</a>{{/if}}
+							 {{#if website}}<a href="{{website}}" class="author-website" rel="author">Website</a>{{/if}}
+							 {{#if location}}<div class="author-location">{{location}}</div>{{/if}}
+							 {{#if bio}}<p class="author-bio">{{{bio}}}</p>{{/if}}
+						</div>
+					</section>
+				{{/author}}
+
+				{{#if tags}}
+					<div class="post-tags">Tagged with: {{tags separator=", "}}</div>
+				{{/if}}
+			</footer>
+	</article>
+
+	<aside class="post-navigation cf">
+		{{#next_post}}
+			<div class="nav-next">
+				<a href="{{url}}">{{title}}</a>
+			</div>
+		{{/next_post}}
+		{{#prev_post}}
+			<div class="nav-previous">
+				<a href="{{url}}">{{title}}</a>
+			</div>
+		{{/prev_post}}
+	</aside>
+
+</main>
+{{/post}}

@@ -1,0 +1,58 @@
+{{!< default}}
+
+{{> header}}
+
+<main class="main-content theme-margin" role="main">
+	
+	{{#post}}
+
+		<article role="article">
+			<header>
+				<div class="post-meta">
+					{{#if featured}}
+						<span class="featured-post"><i class="icon-star"></i> Featured &mdash;</span>
+					{{/if}}
+					<time class="date" datetime="{{date format="YYYY-MM-DD"}}">
+						{{date format='DD MMM YYYY'}}
+					</time>
+				</div>
+				<h1 class="post-title">{{title}}</h1>
+			</header>
+			<div class="post-content">
+				{{content}}
+			</div><!-- end post-content -->
+			{{#if tags}}
+				<div class="post-tags">
+					Tags: {{tags separator=" / "}}
+				</div><!-- end post-tags -->
+			{{/if}}
+			<div class="share-post">
+				<span>Share this post:</span>
+				<a target="_blank" href="http://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}">Twitter</a>
+				<a target="_blank" href="http://wwww.facebook.com/sharer.php?u={{url absolute="true"}}">Facebook</a>
+				<a target="_blank" href="http://plus.google.com/share?url={{url absolute="true"}}">Google+</a>
+			</div><!-- end share-post -->				
+			{{#if author}}
+				<hr>
+				<footer class="post-footer">
+					<div class="author-info">
+						<div class="author-image">
+                			<img src="{{author.image}}" alt="{{author.name}}">
+						</div>
+						<h4>About {{author.name}}</h4>
+						<p class="author-bio">
+							{{author.bio}}
+							{{#if author.website}}
+								<a href="{{author.website}}" class="author-website">{{author.website}} &rarr;</a>
+							{{/if}}
+						</p>
+					</div><!-- end author-info -->
+				</footer><!-- end post-footer -->
+			{{/if}}
+		</article>
+
+	{{/post}}
+
+</main><!-- end main-content -->
+
+{{> footer}}

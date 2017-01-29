@@ -1,0 +1,173 @@
+/* ==========================================================================
+   2. Custum Css - Setting up some base styles
+   ========================================================================== */
+
+.main-header .inner{
+   		width: 55%;
+   		margin: inherit;
+   }
+.page-description{
+   		text-shadow: 1px 1px #9BB5E4;
+   }
+    
+.scroll-down{
+	color: rgba(47, 185, 219, 0.7);
+
+}
+.scroll-down:hover {
+	color: rgba(47, 185, 219, 1);
+	text-decoration: none;
+}
+.post_featureimg{
+	width: 250px;
+	height: 250px;
+	border: 5px solid #F0F0F0;
+	background-size: cover;
+	margin: 0 auto;
+}
+
+
+
+/*---------------------------------------------*/
+ 
+/* Grid */
+ 
+#posts { margin: 30px auto 0; }
+.post {
+	margin: 0 0 50px;
+	width: 100%;
+}
+.pimg { width: 100%; }
+
+.post-title{
+	padding-top: 1rem;
+
+}
+ 
+#grid.container .post img { padding: 0; }
+ 
+ 
+/* Medium devices */
+ 
+@media (min-width: 768px) {
+	#grid > #posts .post { width: 335px; }
+	#grid > #posts .post.cs2 { width: 100%; }
+	.post img { padding: 0; }
+}
+ 
+ 
+ 
+/* Medium devices */
+ 
+@media (min-width: 992px) {
+	#grid > #posts .post { width: 445px; }
+	#grid > #posts .post.cs2 { width: 100%; }
+}
+ 
+ 
+ 
+/* Large devices */
+ 
+@media (min-width: 1200px) {
+	#grid > #posts .post { width: 346px; }
+	#grid > #posts .post.cs2 { width: 742px; }
+}
+ 
+ 
+ 
+/* Large devices min-width (1200px) + a .post margin (50px) * 2 (100px) = 1300px */
+/* 1300px gives me the clearance I need to keep the margins of the entire #grid (the
+bleed if you will) the same width as the .post margins posts (50px). Basically I'm
+being really picky about whitespace. If you don't care, no problem, just delete this.
+Can this be done with Masonry options? */
+ 
+@media (min-width: 1300px) {
+	#grid {
+		left: -50px;
+		padding-left: 50px;
+		padding-right: 50px;
+		position: relative;
+    	}
+	#grid.container {
+		left: auto;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+/*-----------------------------------------------*/
+
+
+.pageing{
+	width: 100%;
+	margin: 0 auto;
+}
+
+.paged header .page-description{
+	display: none;
+}
+
+.post-meta a{
+	color: #43D6E0;
+}
+.authorimg{
+	width: 100%;
+	margin: 0 auto;
+	padding-bottom: 1rem;
+}
+.post.featured .post-title span:before {
+	color: rgba(255, 126, 0, 1);
+	content: "\00a4";
+	font-family: Merriweather;
+	font-size: 28px;
+	position: relative;
+	right: 4px;
+	top: -15px;
+	font-weight: 600;
+}
+ 
+/*------------------------------*/
+
+/*------------index page style------------------*/
+
+#tiles{
+	position: relative;
+
+}
+
+ #tiles li {
+      -moz-box-sizing: border-box;
+           box-sizing: border-box;
+    }
+.postlist{
+	position: relative;
+}
+
+.postlist ul{
+	margin: 0 auto;
+}
+
+.postlist li{
+	list-style-type: none;
+}
+.fluid-width-video-wrapper {
+	padding-top: 24rem;
+}
+
+@media (min-width: 1200px){
+	
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+
+}
+
+@media only screen and (max-width: 767px) {
+
+}
+
+@media only screen and (max-width: 500px) {
+
+}
+

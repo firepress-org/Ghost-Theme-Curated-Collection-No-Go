@@ -1,0 +1,18 @@
+<header class="site-header theme-margin group" role="banner">
+	<div class="hgroup">
+	    {{#if @blog.logo}}
+	  		<h1 class="site-title"><a href="{{@blog.url}}"><img src="{{@blog.logo}}" /></a></h1>
+	    {{else}}
+	        <h1 class="site-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+	    {{/if}}
+	    <p class="site-description">{{@blog.description}}</p>
+	</div><!-- end hgroup -->
+	<nav class="main-navigation">
+		<h2 class="visually-hidden">Main navigation</h2>
+		<ul>
+			<li><a href="{{@blog.url}}">Home</a></li>	
+			<li><a href="/about">About</a></li>
+			<li><a href="/styles">Styles</a></li>
+		</ul>
+	</nav><!-- end main-navigation -->	
+</header><!-- end site-header -->

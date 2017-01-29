@@ -1,0 +1,25 @@
+{{! Previous/next page links - only displayed on page 2+ }}
+<div class="extra-pagination inner">
+    {{pagination}}
+</div>
+
+{{! Post Loop }}
+<div class="posts-grid">
+{{#foreach posts}}
+
+    {{#has tag="speaksup-video"}}
+
+        {{> thumb/video}}
+
+    {{else}}
+
+        {{> thumb/post}}
+
+    {{/has}}
+
+{{/foreach}}
+</div>
+
+
+{{! Previous/next page links - displayed on every page }}
+{{pagination}}

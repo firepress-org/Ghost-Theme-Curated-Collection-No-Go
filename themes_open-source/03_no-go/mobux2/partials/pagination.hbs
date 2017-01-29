@@ -1,0 +1,9 @@
+<nav class="pagination" role="presentation">
+    {{#if next}}
+      <a class="older-posts" href="{{page_url next}}">&larr; &Auml;ltere Posts</a>
+    {{/if}}
+    <span class="sheet-page-number">Seite {{page}} / {{pages}}</span>
+    {{#if prev}}
+      <a class="newer-posts" href="{{page_url prev}}">Neuere Posts &rarr;</a>
+    {{/if}}
+</nav>

@@ -1,0 +1,39 @@
+<div class="nav">
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <section class="menu widget">
+        <header class="h4 widgettitle">Menu</header>
+            <section id="menu">
+    <ul>
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+    </ul>
+            </section> <!-- end .widget -->
+     </section>
+
+    <section class="links widget">
+        <header class="h4 widgettitle">Links</header>
+            <section id="link-info">
+                    <ul>
+                     <li><a href="https://twitter.com/KurtKlinner"><span class="symbol">circletwitterbird</span> Follow Me</a></li>
+                     <li><a href="https://plus.google.com/107405408427854587706/posts"><span class="symbol">circlegoogleplus</span> Google Plus</a></li>
+                     <li><a href="https://github.com/ktklin"><span class="symbol">circlegithubalt</span> GitHub</a></li>
+                     </ul>
+            </section> <!-- end .widget -->
+     </section>
+
+    <section class="contact widget">
+        <header class="h4 widgettitle">Kontakt</header>
+            <section id="author-info">
+                    <ul>
+                     <li><a href="mailto:kurt@mobux.de">Kontakt</a></li>
+                     <li><a href="{{@blog.url}}/rss/">Subscribe</a></li>
+                     <li><a href="{{@blog.url}}/impressum/">Impressum</a></li>
+                     </ul>
+            </section> <!-- end .widget -->
+     </section>
+
+</div>
+<span class="nav-cover"></span>

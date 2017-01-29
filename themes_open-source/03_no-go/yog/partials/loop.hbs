@@ -1,0 +1,42 @@
+
+{{! This is the post loop - each post will be output using this markup }}
+<div class="postlist container-fluid">
+    <ul id="tiles">
+        {{#foreach posts}}
+          <li>
+            <article class="item {{post_class}}" >
+                    <header class="post-header">
+
+                         <a class="pimg" href="{{url}}">
+                            {{#if image}}
+                                <div class="post_featureimg img-responsive" style="width: 100%; background-image: url({{image}})">
+                                </div>
+                            {{else}}  {{content words="0"}}
+                            {{/if}}
+                             
+                        </a>
+                        <h2 class="post-title"><a href="{{url}}"><span>{{{title}}}</span></a></h2>
+                    </header>
+                    <section class="post-excerpt">
+                        <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">read more...</a></p>
+                    </section>
+                    <footer class="post-meta">
+                        <div class="authorimg">
+                            {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}}
+                        </div>
+                        {{author}}
+                        {{tags prefix=" on "}}
+                        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+                    </footer>
+               
+            </article>
+            </li>
+        {{/foreach}}
+    </ul>
+</div>
+   
+
+{{! Previous/next page links - displayed on every page }}
+<div class="pageing">
+    {{pagination}}
+</div>

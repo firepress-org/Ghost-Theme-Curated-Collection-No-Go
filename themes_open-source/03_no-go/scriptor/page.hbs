@@ -1,0 +1,27 @@
+{{!< default}}
+
+{{> header}}
+
+<main class="main-content theme-margin" role="main">
+    
+    {{#post}}
+    
+        <article role="article">
+            <header>
+                <h1 class="post-title">{{title}}</h1>
+            </header>
+            <div class="post-content">
+                {{content}}
+            </div><!-- end post-content -->
+            {{#if tags}}
+                <div class="post-tags">
+                    Tags: {{tags separator=" / "}}
+                </div><!-- end post-tags -->
+            {{/if}}
+        </article>
+
+    {{/post}}
+    
+</main><!-- end main-content -->
+
+{{> footer}}

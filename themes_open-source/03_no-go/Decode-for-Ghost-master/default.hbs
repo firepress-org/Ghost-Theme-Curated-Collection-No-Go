@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{! Document Settings }}
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	{{! Page Meta }}
+	<title>{{meta_title}}</title>
+	<meta name="description" content="{{meta_description}}">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+	{{! Styles and Scripts }}
+	<link rel="stylesheet" type="text/css" href="{{asset "styles/build/style.css"}}">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oxygen:400,700">
+	
+	{{! Prefetch next page and previous pages, if they exist }}
+	{{#if pagination.next}}<link href="{{page_url pagination.next}}" rel="prefetch">{{/if}}
+	{{#if pagination.prev}}<link href="{{page_url pagination.prev}}" rel="prefetch">{{/if}}
+
+	{{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}
+	{{#is "home, index, tag, author"}} fancy-header
+		{{#if @blog.cover}} blog-has-cover{{/if}}
+		{{#if @blog.logo}} blog-has-logo{{/if}}
+		{{#if author.cover}} author-has-cover{{/if}}
+		{{#if author.image}} author-has-image{{/if}}"
+	{{/is}} 
+	{{#is "home, index, tag"}}
+		{{#if @blog.cover}}style="background-image: url({{@blog.cover}});"{{/if}}
+	{{/is}}
+	{{#is "author"}}
+		{{#if @blog.cover}}{{#if author.cover}}style="background-image: url({{author.cover}});"{{else}}style="background-image: url({{@blog.cover}});"{{/if}}{{/if}}
+	{{/is}}>
+	
+	{{! Everything else gets inserted here }}
+	{{{body}}}
+
+	<footer class="site-footer">
+		<a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">RSS</span></a>
+		<div class="inner">
+			 <section class="copyright">All content copyright <a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.</section>
+			 <section class="poweredby">Proudly published with <a class="icon-ghost" href="https://ghost.org">Ghost</a></section>
+			 <section class="themeinfo"><a href="http://scotthsmith.com/projects/decode/">Decode</a> by <a href="http://scotthsmith.com">Scott Smith</a></section>
+		</div>
+	</footer>
+
+</div> {{! end .site-main }}
+{{#if @blog.logo}}</div> {{! end .page-scroll }} {{/if}}
+
+	{{! Ghost outputs important scripts and data with this tag }}
+	{{ghost_foot}}
+
+</body>
+</html>

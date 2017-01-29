@@ -1,0 +1,40 @@
+.single-post{
+    width: 80%;
+}
+.home-blog-title{
+    font-size:2.4rem;
+}
+
+.post-cover-info{
+    font-size: 3rem;
+    width: 80%;
+    .post-title{
+        line-height:3rem;
+        a{
+            font-size: 3rem;
+        }
+    }
+}
+
+
+.nav-url{
+    width: 100%;
+    li{
+        margin-right: .5rem;
+    }
+}
+
+.post-in-list{
+    width: 95%;
+}
+
+.search-bar{
+    display: none;
+}
+.pagination{
+    width: 90%;
+}
+
+.cover-slide-more{
+    left: 45%;
+}

@@ -1,0 +1,6 @@
+<nav class="blog-navigation group">
+	<h2 class="visually-hidden">Blog navigation</h2>
+	{{#if pagination.next}}<a class="next" href="/page/{{pagination.next}}" title="Next">&#8592; Next</a>{{/if}}
+	{{#if pagination.prev}}<a class="prev" href="/page/{{pagination.prev}}" title="Previous">Previous &rarr;</a>{{/if}}
+	<a href="/" class="back-to-top" title="Back to Top">&#8593;</a>
+</nav><!-- end blog-navigation -->

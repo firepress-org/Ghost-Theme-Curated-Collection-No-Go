@@ -1,0 +1,15 @@
+{{#each projects}}
+<article class="project-entry">
+	<header class="post-header project-header" >
+		<h2 class="post-title">{{name}}</h2>
+	</header>
+	<p>{{description}}</p>
+	<div class="project-buttons">
+		<ul>
+			{{#if blogLink}}<li><a href={{blogLink}} >Blog Series</a></li>{{/if}}
+			{{#if githubLink}}<li><a href={{githubLink}} >GitHub</a></li>{{/if}}
+			{{#if downloadLink}}<li><a href={{downloadLink}} >Download</a></li>{{/if}}
+		</ul>
+	</div>
+</article>
+{{/each}}

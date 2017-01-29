@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="google-site-verification" content="2sFNa3r5M51jSBOmqrR7s9kJ6ohxsR5CNOkp4I0a2ho" />
+
+	{{! Page Meta }}
+	<title>{{meta_title}}</title>
+	{{#if post}}
+	<meta name="keywords" content="{{#each post.tags}}{{name}},{{/each}}">
+	{{else}}
+	<meta name="keywords" content="android, javascript, sublime, freelance">
+	{{/if}}
+
+	<meta name="description" content="{{meta_description}}" />
+
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" type="text/css" href="{{asset "/css/normalize.css"}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset "/css/mobux.css"}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset "/css/prism.css"}}" />
+	{{ghost_head}}
+</head>
+<body class="{{body_class}}">
+	{{> sidebar }}
+
+	<div class="content">
+		{{{body}}}
+	</div>
+
+	{{ghost_foot}}
+
+	{{> analytics}}
+
+	<script type="text/javascript" src="{{asset "/js/mobux.js"}}"></script>
+	<script type="text/javascript" src="{{asset "/js/prism.js"}}"></script>
+
+</body>
+</html>

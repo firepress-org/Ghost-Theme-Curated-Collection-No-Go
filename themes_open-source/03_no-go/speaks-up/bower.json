@@ -1,0 +1,16 @@
+{
+  "name": "speaks-up",
+  "version": "0.0.0",
+  "authors": [
+    "Jake <findjakebian@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}

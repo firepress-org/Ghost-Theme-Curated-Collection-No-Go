@@ -1,0 +1,9 @@
+<nav class="pagination" role="navigation">
+	{{#if prev}}
+	<a class="newer-posts square dark icon-chevron-left" href="{{page_url prev}}"><span class="screen-reader-text">Più recenti</span></a>
+	{{/if}}
+	<span class="page-number">Pagina {{page}} di {{pages}}</span>
+	{{#if next}}
+	<a class="older-posts square dark icon-chevron-right" href="{{page_url next}}"><span class="screen-reader-text">Meno recenti</span></a>
+	{{/if}}
+</nav>
