@@ -1,0 +1,1 @@
+Check our primary repo here - https://github.com/firepress-org/Ghost-Theme-Curated-Collection
