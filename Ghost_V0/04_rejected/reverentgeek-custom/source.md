@@ -1,1 +1,0 @@
-https://www.codester.com/items/574/stone-clarity-responsive-ghost-theme
